@@ -1,11 +1,19 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.ExceptionServices;
 using Console = Colorful.Console;
 
 class Program
 {
     static void Main(string[] args)
     {
+
+        const string STANDARD ="1";
+        const string COLORED_EVEN_ODD ="2";
+        const string COLORED_INDEX ="3";
+        const string DOTTED_GRID ="4";
+        const string EXIT = "0";
+
         int rows, cols;
         Console.Write("Enter number of rows: ", Color.DeepSkyBlue);
         rows = Convert.ToInt32(Console.ReadLine());
@@ -39,7 +47,7 @@ class Program
             Console.WriteLine();
 
             // MODE 1: STANDARD VIEW
-            if (choice == "1")
+            if (choice == STANDARD)
             {
                 Console.WriteLine("═══ STANDARD VIEW ═══", Color.Gold);
                 for (int i = 0; i < rows; i++)
@@ -53,7 +61,7 @@ class Program
             }
 
             // MODE 2: COLOR-CODED EVEN/ODD
-            else if (choice == "2")
+            else if (choice == COLORED_EVEN_ODD)
             {
                 Console.WriteLine("═══ COLOR-CODED (EVEN/ODD) ═══", Color.Gold);
                 for (int i = 0; i < rows; i++)
@@ -74,7 +82,7 @@ class Program
             }
 
             // MODE 3: WITH COLORFUL INDICES
-            else if (choice == "3")
+            else if (choice == COLORED_INDEX)
             {
                 Console.WriteLine("═══ WITH COLORFUL INDICES ═══", Color.Gold);
                 for (int i = 0; i < rows; i++)
@@ -94,8 +102,8 @@ class Program
 
 
 
-            // MODE 5: DOTTED BOX GRID
-            else if (choice == "4")
+            // MODE 4: DOTTED BOX GRID
+            else if (choice == DOTTED_GRID)
             {
                 Console.WriteLine("═══ DOTTED BOX GRID ═══", Color.Gold);
 
@@ -163,7 +171,7 @@ class Program
             }
 
             // EXIT
-            else if (choice == "0")
+            else if (choice == EXIT)
             {
                 Console.WriteLine("Goodbye!", Color.LimeGreen);
                 return;
